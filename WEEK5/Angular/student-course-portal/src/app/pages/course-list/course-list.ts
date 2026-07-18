@@ -1,6 +1,7 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { CourseCard } from '../../components/course-card/course-card';
+import { Course } from '../../services/course';
 
 @Component({
   selector: 'app-course-list',
@@ -12,31 +13,21 @@ import { CourseCard } from '../../components/course-card/course-card';
   templateUrl: './course-list.html',
   styleUrl: './course-list.css'
 })
-export class CourseList {
+export class CourseList implements OnInit {
 
-  courses = [
+  courses: any[] = [];
 
-    {
-      id: 1,
-      name: 'Angular',
-      code: 'ANG101',
-      credits: 4
-    },
+  selectedCourseId: number = 0;
 
-    {
-      id: 2,
-      name: 'Java',
-      code: 'JAVA102',
-      credits: 3
-    },
+  constructor(private courseService: Course) {}
 
-    {
-      id: 3,
-      name: 'Spring Boot',
-      code: 'SPR103',
-      credits: 4
-    }
+  ngOnInit(): void {
+    this.courses = this.courseService.getCourses();
+  }
 
-  ];
+  onEnroll(courseId: number): void {
+    console.log("Enrolling in course: " + courseId);
+    this.selectedCourseId = courseId;
+  }
 
 }

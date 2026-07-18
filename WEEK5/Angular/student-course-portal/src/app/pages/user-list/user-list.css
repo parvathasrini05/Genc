@@ -1,0 +1,51 @@
+/* Heading */
+h2 {
+    text-align: center;
+    color: #1976d2;
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
+
+/* Total users */
+.total-users {
+    text-align: center;
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 25px;
+}
+
+/* Card */
+.user-card {
+    width: 80%;
+    max-width: 700px;
+    margin: 20px auto;
+    padding: 18px;
+    border: 1px solid #dcdcdc;
+    border-radius: 10px;
+    background: #ffffff;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+/* Hover effect */
+.user-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* User Name */
+.user-card h3 {
+    margin: 0 0 15px;
+    color: #1565c0;
+}
+
+/* User Details */
+.user-card p {
+    margin: 8px 0;
+    font-size: 16px;
+    color: #333;
+}
+
+.user-card strong {
+    color: #000;
+}

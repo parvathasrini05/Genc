@@ -1,20 +1,74 @@
-<h1>{{ portalName }}</h1>
+<h1>Welcome to Student Course Portal</h1>
+<h2 *ngIf="isLoggedIn">
+  Welcome Student
+</h2>
+<p>
+Manage your academic journey with ease.
+</p>
 
-<button
-  [disabled]="!isPortalActive"
-  (click)="onEnrollClick()">
-  Enroll Now
-</button>
+<div class="cards">
 
-<p>{{ message }}</p>
+    <div
+    class="card"
+    [ngClass]="{'highlight': highlightCard}">
+
+    <h3>Courses Available</h3>
+
+    <p>12</p>
+
+</div>
+    
+
+    <div class="card">
+
+        <h3>Enrolled</h3>
+
+        <p>3</p>
+
+    </div>
+
+    <div class="card">
+
+    <h3>GPA</h3>
+
+    <p [ngStyle]="{'color': fontColor, 'font-size':'30px'}">
+        3.8
+    </p>
+
+</div>
+
+</div>
+<hr>
+
+<h3>Technologies</h3>
+
+<ul>
+  <li *ngFor="let tech of technologies">
+    {{ tech }}
+  </li>
+</ul>
+<hr>
+
+<h2>Angular Pipes Demo</h2>
+
+<p><b>Original Name:</b> {{ studentName }}</p>
+
+<p><b>Uppercase:</b> {{ studentName | uppercase }}</p>
+
+<p><b>Lowercase:</b> {{ studentName | lowercase }}</p>
+
+<p><b>Title Case:</b> {{ studentName | titlecase }}</p>
+
+<p><b>Course Fee:</b> {{ courseFee | currency:'INR' }}</p>
+
+<p><b>Date:</b> {{ today | date:'mediumDate' }}</p>
+
+<p><b>Attendance:</b> {{ attendance | percent }}</p>
 
 <hr>
 
-<label for="search">Search Course:</label>
+<h2>Custom Pipe Demo</h2>
 
-<input
-  id="search"
-  type="text"
-  [(ngModel)]="searchTerm">
+<p>Original: {{ studentName }}</p>
 
-<p>Searching for: {{ searchTerm }}</p>
+<p>Reverse: {{ studentName | reverse }}</p>
